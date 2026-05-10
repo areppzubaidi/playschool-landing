@@ -11,7 +11,7 @@ export default function Hero() {
         </ul>
       </nav>
       <div className="hero-content">
-        <h1 id="hero-title">Where Little Minds<br/><span>Bloom Big</span></h1>
+        <h1 id="hero-title">Where Big Futures<br/><span>Bloom Big</span></h1>
         <p>A safe, joyful, play-based early-learning home for ages 2 to 6.</p>
         <a className="cta" href="#contact">Book a Tour</a>
       </div>
