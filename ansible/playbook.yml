@@ -1,0 +1,16 @@
+---
+- hosts: web
+  become: yes
+  vars:
+    image: areppzubaidi/playschool:latest
+  tasks:
+    - name: Ensure docker installed
+      apt: { name: docker.io, state: present, update_cache: yes }
+    - name: Ensure docker running
+      service: { name: docker, state: started, enabled: yes }
+    - name: Pull latest image
+      command: docker pull {{ image }}
+    - name: Restart container
+      shell: |
+        docker rm -f playschool || true
+        docker run -d --name playschool --restart unless-stopped -p 80:80 {{ image }}
